@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        html {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #arpm-container {
+            background-color: black;
+            color: white;
+            height: 150px;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #arpm-content {
+            position: relative;
+        }
+
+        #circle {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            background-color: white;
+            border-radius: 100%;
+            padding: 10px;
+            animation: roll 5s linear infinite;
+        }
+
+        @keyframes roll {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(75px);
+            }
+            50% {
+                transform: translateX(115px);
+            }
+            75% {
+                transform: translateX(75px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="arpm-container">
+        <div id="arpm-content">
+            Welcome To ARPM!
+            <div id="circle"></div>
+        </div>
+    </div>
+</body>
+</html>

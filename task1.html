@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Animation</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    #div1, #div2 {
+        border: 1px solid black;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+    <span>Please wait a few seconds for the animation to start!</span>
+
+    <div id="div1">Source: 012345678</div>
+    <div id="div2">Destination: </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const phrase = "012345678";
+            const div1 = document.getElementById("div1");
+            const div2 = document.getElementById("div2");
+
+            function moveCharacter(char, delay) {
+                setTimeout(() => {
+                div2.innerHTML += char;
+                }, delay * 1000);
+            }
+
+            function animateCharacters() {
+                for (let i = 0; i < phrase.length; i++) {
+                    const char = phrase[i];
+                    const delay = i % 2 === 0 ? (i + 1) * 1 + 4 : i * 1 + 4;
+
+                    if (i % 2 === 0) {
+                        setTimeout(() => {
+                        moveCharacter(char, delay);
+                        }, delay * 1000);
+                    } else {
+                        moveCharacter(char, delay);
+                    }
+                }
+            }
+            
+            animateCharacters();
+        });
+    </script>
+</body>
+</html>
